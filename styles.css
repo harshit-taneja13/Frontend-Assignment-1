@@ -1,0 +1,359 @@
+:root {
+  --primary-color: hsl(0, 0%, 10.6%);
+  --secondary-color: #505a63;
+  --ternary-color: hsl(0, 0%, 41.2%);
+  --hover-color: hsl(0, 0%, 89%);
+  --color-surface: #f8f9fa;
+  --btn-background: linear-gradient(0deg, rgb(250, 250, 250) 0%, rgb(255, 255, 255) 100%);
+  --btn-border-color: hsl(0, 0%, 81.2%);
+  --btn-shadow: var(--brand-shadow_light-small, 0 4px 8px -2px hsla(0, 0%, 11%, 0.14), 0 2px 4px -2px hsla(0, 0%, 11%, 0.1));
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  --modal-bg: #fff;
+  --modal-radius: 1.5rem;
+  --modal-shadow: 0 2px 24px rgba(31, 45, 61, 0.06);
+  --modal-divider: #e2e8f0;
+  --card-radius: 1.1rem;
+  --card-border: 1px solid hsl(0, 0%, 89%);
+  --card-bg: hsl(0, 0%, 100%);
+  --card-bg-email: #effdfd;
+  --card-bg-sms: #efeefc;
+  --card-bg-whatsapp: #fff4f0;
+  --card-bg-webpush: #faf9f5;
+  --automation-card-bg: #ffffff;
+  --automation-card-border: 1px solid hsl(0, 0%, 89%);
+  --automation-card-radius: 1rem;
+  --status-bg: #ece6d5;
+  --status-text: #8c7b41;
+  --button-bg: #fff;
+  --button-border: 1.2px solid #c9c9c9;
+  --button-radius: 2rem;
+  --button-font: inherit;
+  --button-padding: 0.5rem 1.5rem;
+
+  /* ADDED: for any hardcoded color in your rules below */
+  --gray-100: #f0f0f0;
+  --gray-200: #f8f9fa;
+  --gray-300: #e2e8f0;
+  --gray-400: hsl(0, 0%, 81.2%);
+  --white: #fff;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.modal {
+  background: var(--gray-200);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal__content {
+  background-color: var(--white);
+  max-width: 1280px;
+  box-shadow: var(--sib-shadow_light-medium, 0 10px 16px -4px hsla(0, 0%, 11%, 0.1), 0 4px 6px -2px hsla(0, 0%, 11%, 0.04));
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 32px;
+}
+
+.modal__body{
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal__title {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.modal__close {
+  background: none;
+  border: none;
+  color: var(--ternary-color);
+  cursor: pointer;
+  font-size: 1.7rem;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  margin-left: 1rem;
+  height: 24px;
+  width: 24px;
+  font-family: inherit;
+}
+
+.modal__close:hover {
+  background: var(--gray-100);
+}
+
+.modal__border {
+  height: 1.5px;
+  background: var(--modal-divider);
+  border: 1px solid var(--btn-border-color);
+}
+
+
+.title__container {
+  padding: 1.5rem 1.5rem 0rem 1.5rem;
+}
+
+.title__text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.title__box {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+
+.title__container--automation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.button__custom--automation{
+  margin-bottom: 0.5rem;
+}
+
+.section__title {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  color: var(--primary-color);
+  margin: 0 0 0.5rem 0;
+  display: inline-block;
+}
+
+.section__description {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: var(--ternary-color);
+  margin: 0;
+  display: inline-block;
+}
+
+.card-list {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 2rem;
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+}
+
+.card {
+  height: 8.75rem;
+  width: 14.4rem;
+  grid-template-rows: 70% 30%;
+  grid-template-columns: 100%;
+  background-color: var(--card-bg);
+  border: var(--card-border);
+  box-sizing: border-box;
+  border-radius: var(--card-radius);
+  display: grid;
+  overflow: hidden;
+  box-shadow: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-list.card-list--automation {
+  grid-template-columns: repeat(auto-fill, minmax(14.5rem, 1fr));
+}
+
+.card:focus,
+.card--clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  outline: none;
+  cursor: pointer;
+}
+
+.card--email .card__image {
+  background: var(--card-bg-email);
+}
+.card--sms .card__image {
+  background: var(--card-bg-sms);
+}
+.card--whatsapp .card__image {
+  background: var(--card-bg-whatsapp);
+}
+.card--webpush .card__image {
+  background: var(--card-bg-webpush);
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card__image img {
+  display: flex;
+}
+
+.card__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 16px;
+  position: relative;
+}
+
+.card__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.card__status {
+  background: var(--status-bg);
+  color: var(--status-text);
+  font-size: 0.97rem;
+  font-weight: 500;
+  border-radius: 1rem;
+  display: grid;
+  pointer-events: none;
+}
+
+.button--secondary{
+  background: var(--btn-background);
+  border-color: var(--primary-color);
+  border-width: 1px;
+  box-shadow: var(--btn-shadow);
+  color: var(--primary-color);
+  padding: 0.4375rem 1rem;
+  align-items: center;
+  border-radius: 1rem;
+  display: flex;
+  font-family: "Roboto-Medium", "system-ui", "-apple-system", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  max-width: 100%;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  outline: none;
+}
+
+.btn_label{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.button--secondary:hover,
+.button--secondary:focus {
+  background: var(--card-bg-sms);
+  border: 1px solid var(--card-bg-sms);
+}
+
+.automation-card {
+  background-color: var(--automation-card-bg);
+  border: var(--automation-card-border);
+  border-radius: var(--automation-card-radius);
+  box-sizing: border-box;
+  min-height: 110px;
+  transition: box-shadow 0.18s;
+}
+
+.automation-card .automation-card__content {
+  padding: 1rem;
+  position: relative;
+}
+
+.automation-card:hover,
+.automation-card:focus {
+  border: 1px solid var(--hover-color);
+  box-shadow: var(--sib-shadow_light-small, 0 4px 8px -2px hsla(0, 0%, 11%, 0.14), 0 2px 4px -2px hsla(0, 0%, 11%, 0.1));
+  cursor: pointer;
+  transform: translateY(-1px);
+}
+.automation-card__title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+.automation-card__desc {
+  line-height: 1rem;
+  font-size: 0.75rem;
+  color: var(--primary-color);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .modal__header{
+    padding: 32px;
+  }
+  .modal__content{
+    border-radius: var(--sib-border-radius_lg, 1rem);
+    margin: 0 40px;
+    max-width: 880px;
+    min-height: 350px;
+    position: relative;
+    transition: all 0.35s;
+  }
+  .card-list{
+    /* padding: 1rem; */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .modal__content {
+    margin: 80px;
+    max-width: 1280px;
+    position: relative;
+  }
+  .card-list .automation-card{
+    grid-template-columns: repeat(auto-fill, minmax(14.5rem, 1fr));
+    gap: 1rem;
+  }
+}
