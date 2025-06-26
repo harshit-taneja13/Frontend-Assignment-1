@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brevo Campaigns Page</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div class="campaign">
+        <div class="left__part">
+            <h2>Campaign</h2>
+        </div>
+        <div class="right__part">
+            <div class="main__header">
+                <button class="main__button" type="button">Create folder</button>
+                <button class="main__button main__button--primary" id="createCampaignBtn" type="button" aria-haspopup="dialog">Create campaign</button>
+
+            </div>
+
+            <div id="modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true" aria-modal="true">
+                <div class="modal__content" role="document">
+                    <header class="modal__header" id="modal-title">
+                        <h2 class="modal__title">Create a campaign</h2>
+                        <button class="modal__close" id="closeBtn" aria-label="Close modal" type="button">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </header>
+                    <div class="modal__border"></div>
+
+                    <div class="modal__body">
+                        <section aria-labelledby="standard-heading">
+                            <div class="title__container">
+                                <div class="title__text">
+                                    <div class="title__box">
+                                        <h3 class="section__title" id="standard-heading">Standard</h3>
+                                        <p class="section__description">Create a one-off campaign from scratch.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-list card-list--standard" role="group" aria-labelledby="standard-heading">
+
+                                <div class="card card--clickable card--email" id="email-mini-card" tabindex="0"
+                                    role="button" aria-label="Email campaign">
+                                    <div class="card__image">
+                                        <img src="assets/Email.webp" alt="Email" width="80" height="80">
+                                    </div>
+                                    <div class="card__content">
+                                        <h6 class="card__title">Email</h6>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="card card--clickable card--sms" id="sms-mini-card" tabindex="0"
+                                    role="button" aria-label="SMS campaign">
+                                    <div class="card__image">
+                                        <img src="assets/SMS.webp" alt="SMS" width="80" height="80">
+                                    </div>
+                                    <div class="card__content">
+                                        <h6 class="card__title">SMS</h6>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="card card--clickable card--whatsapp" id="whatsapp-mini-card" tabindex="0"
+                                    role="button" aria-label="WhatsApp campaign">
+                                    <div class="card__image">
+                                        <img src="assets/Whatsapp.webp" alt="Whatsapp" width="80" height="80">
+                                    </div>
+                                    <div class="card__content">
+                                        <h6 class="card__title">WhatsApp</h6>
+                                    </div>
+                                </div>
+
+
+                                <div class="card card--clickable card--webpush" id="webpush-mini-card" tabindex="0"
+                                    role="button" aria-label="Web Push campaign">
+                                    <div class="card__image">
+                                        <img src="assets/WebPush.webp" alt="WebPush" width="80" height="80">
+                                    </div>
+                                    <div class="card__content">
+                                        <h6 class="card__title">Web Push</h6>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </section>
+
+
+                        <section aria-labelledby="automated-heading">
+                            <div class="title__container">
+                                <div class="title__container--automation">
+                                    <div class="title__box">
+                                        <h3 class="section__title" id="automated-heading">Automated</h3>
+                                        <p class="section__description">Use a pre-built automated sequence of messages,
+                                            or
+                                            create
+                                            one yourself.</p>
+                                    </div>
+                                    <div class="button__custom--automation">
+                                        <button type="button" class="button button--secondary">
+                                            <span class="btn__label">
+                                                Create a custom automation
+                                            </span>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="card-list--automation" role="group" aria-labelledby="automated-heading">
+                                <div id="abandonedCartButton" class="automation-card" role="button" tabindex="0"
+                                    aria-label="Abandoned Cart automation - Send a message after a contact abandons a cart">
+                                    <div class="automation-card__content">
+                                        <h5 class="automation-card__title">
+                                            Abandoned Cart
+                                        </h5>
+                                        <div class="automation-card__desc">
+                                            Send a message after a contact abandons a cart.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="productPurchaseButton" class="automation-card" role="button" tabindex="0"
+                                    aria-label="Product Purchase automation - Send a message when a product is purchased on your website">
+                                    <div class="automation-card__content">
+                                        <h5 class="automation-card__title">
+                                            Product Purchase
+                                        </h5>
+                                        <div class="automation-card__desc">
+                                            Send a message when a product is purchased on your website.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="welcomeMessageButton" class="automation-card" role="button" tabindex="0"
+                                    aria-label="Welcome Message automation - Send a welcome message after a subscriber joins your list">
+                                    <div class="automation-card__content">
+                                        <h5 class="automation-card__title">
+                                            Welcome Message
+                                        </h5>
+                                        <div class="automation-card__desc">
+                                            Send a welcome message after a subscriber joins your list.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="marketingActivityButton" class="automation-card" role="button" tabindex="0"
+                                    aria-label="Marketing Activity automation - Send messages based on whether contacts open or click on an email campaign">
+                                    <div class="automation-card__content">
+                                        <h5 class="automation-card__title">
+                                            Marketing Activity
+                                        </h5>
+                                        <div class="automation-card__desc">
+                                            Send messages based on whether contacts open or click on an email campaign.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="anniversaryDateButton" class="automation-card" role="button" tabindex="0"
+                                    aria-label="Anniversary Date automation - Send a series of messages based on a special event or birthday">
+                                    <div class="automation-card__content">
+                                        <h5 class="automation-card__title">
+                                            Anniversary Date
+                                        </h5>
+                                        <div class="automation-card__desc">
+                                            Send a series of messages based on a special event or birthday.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="pageVisitButton" class="automation-card" role="button" tabindex="0"
+                                    aria-label="Page Visit automation - Send a message after a contact visits a specific page on your website">
+                                    <div class="automation-card__content">
+                                        <h5 class="automation-card__title">
+                                            Page Visit
+                                        </h5>
+                                        <div class="automation-card__desc">
+                                            Send a message after a contact visits a specific page on your website.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="websiteEventButton" class="automation-card" role="button" tabindex="0"
+                                    aria-label="Website Event automation - Send a message after a contact performs a specific action on your website">
+                                    <div class="automation-card__content">
+                                        <h5 class="automation-card__title">
+                                            Website Event
+                                        </h5>
+                                        <div class="automation-card__desc">
+                                            Send a message after a contact performs a specific action on your website.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="transactionalActivityButton" class="automation-card" role="button"
+                                    tabindex="0" aria-label="Transactional Activity automation - Send a message based on whether contacts open or click on transactional emails">
+                                    <div class="automation-card__content">
+                                        <h5 class="automation-card__title">
+                                            Transactional Activity
+                                        </h5>
+                                        <div class="automation-card__desc">
+                                            Send a message based on whether contacts open or click on transactional
+                                            emails.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>
